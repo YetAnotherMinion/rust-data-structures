@@ -1,0 +1,10 @@
+[package]
+name = "rust-data-structures"
+version = "0.0.1"
+authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
+
+#[[bin]]
+#name = "arbitary-binary-name"
+#path = "data-structures/main.rs"
+
+[dependencies]
