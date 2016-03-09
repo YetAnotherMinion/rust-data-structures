@@ -1,0 +1,9 @@
+[package]
+name = "binary-tree"
+version = "0.0.1"
+authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
+
+[[bin]]
+name = "binary-main"
+path = "src/mod.rs"
+
