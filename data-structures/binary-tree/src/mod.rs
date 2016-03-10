@@ -1,4 +1,3 @@
-pub use self::binary_tree::hello_tree;
 
 pub mod binary_tree;
 
