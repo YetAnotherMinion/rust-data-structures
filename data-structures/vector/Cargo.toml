@@ -1,0 +1,8 @@
+[package]
+name = "vector"
+version = "0.0.1"
+authors = ["YetAnotherMinion yetanotherminion@gmail.com"]
+
+[[bin]]
+name = "main"
+path = "src/mod.rs"
