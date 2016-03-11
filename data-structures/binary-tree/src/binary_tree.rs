@@ -87,10 +87,18 @@ mod test {
     }
 
     #[test]
-    fn test_btree_iteration() {
+    fn btree_iteration() {
         assert_eq!(BinaryTree::new_leaf(123).into_iter().collect::<Vec<_>>(), vec![123]);
         let btree = BinaryTree::new_node(100, BinaryTree::new_leaf(4), BinaryTree::new_node(120, BinaryTree::new_leaf(110), BinaryTree::new_leaf(130)));
         assert_eq!(btree.into_iter().collect::<Vec<_>>(), vec![4,110,130]);
+    }
+
+    #[test]
+    fn deffered_construction() {
+        let 
+        for x in 0..10 {
+            
+        }
     }
 }
 
