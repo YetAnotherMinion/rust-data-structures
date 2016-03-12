@@ -1,0 +1,10 @@
+[package]
+name = "misc"
+version = "0.1.0"
+authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
+
+[[bin]]
+name = "two-eggs"
+path = "src/two_eggs.rs"
+
+[dependencies]
