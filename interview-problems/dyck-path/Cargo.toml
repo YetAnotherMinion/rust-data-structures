@@ -1,5 +1,5 @@
 [package]
-name = "dyck-path"
+name = "yam-dyck-path"
 version = "0.1.0"
 authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
 

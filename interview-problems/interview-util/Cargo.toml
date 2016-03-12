@@ -1,5 +1,5 @@
 [package]
-name = "interview-util"
+name = "yam-interview-util"
 version = "0.1.0"
 authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
 
