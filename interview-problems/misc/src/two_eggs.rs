@@ -1,4 +1,5 @@
 use std::cmp;
+use std::env;
 
 fn two_eggs_inner(k: u64, arr: &mut Vec<u64>, count: &mut u64) -> u64 {
     let mut ii = k as usize;
@@ -26,7 +27,11 @@ fn two_eggs(k: u64) -> (u64, u64) {
 }
         
 fn main() {
-    for k in 1..100 {
+    let args: Vec<_> = env::args().collect();
+    if args.len() != 2 {
+
+    } else {
+        let k: u64 = args[1].parse().ok().expect("Wanted a number");
         let (x, y) = two_eggs(k);
         println!("For {} floors, minimum number of moves is {} [{} steps]", k, x, y);
     }
