@@ -3,8 +3,8 @@ pub struct Node {
 }
 
 pub enum FooBar {
-    struct Node,
-    struct Node2,
+    Node,
+    Node2,
 }
 
 struct Node2 {

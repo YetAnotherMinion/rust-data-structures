@@ -94,8 +94,7 @@ mod test {
     }
 
     #[test]
-    fn deffered_construction() {
-        let 
+    fn deffered_construction() { 
         for x in 0..10 {
             
         }

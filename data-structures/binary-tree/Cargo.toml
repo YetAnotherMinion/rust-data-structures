@@ -1,5 +1,5 @@
 [package]
-name = "binary-tree"
+name = "yam-binary-tree"
 version = "0.0.1"
 authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
 

@@ -1,5 +1,5 @@
 [package]
-name = "vector"
+name = "yam-vector"
 version = "0.0.1"
 authors = ["YetAnotherMinion yetanotherminion@gmail.com"]
 
