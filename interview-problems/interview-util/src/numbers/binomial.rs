@@ -4,9 +4,9 @@ use core::ops::{Add, Sub, Mul, Div};
 
 
 pub fn binomial<T>(n: T, k: T) -> T 
-    where T: Add+Sub+Mul+Div+Eq+Zero<T>+One<T>
+    where T: Add+Sub+Mul+Div+Zero<T>+One<T>
 {
-     
+   T::one() 
 }
 
 //pub fn binomial(n: u64, k: u64) -> u64 {
@@ -15,15 +15,26 @@ pub fn binomial<T>(n: T, k: T) -> T
 //}
 
 // start must be less than end
+
 pub fn capital_pi<T>(start: T, end: T) -> T
-    where T: Add+Sub+Mul+Div+Eq+Zero<T>+One<T>
+    where T: Add<Output = T> + Mul<Output = T> + One<T> + PartialOrd + Copy
 {
-    for x in start..end {
-        let y: i32 = 1;
+    if !(start < end) {
+        panic!("start of range must be less thand end of range");
     }
-    start
+    let mut cursor = start;
+    let mut result = T::one();
+    while !(cursor < end) {
+        result = result * cursor;
+        cursor = cursor + T::one();
+    }
+    result
 }
 
-pub fn hello() -> String {
-    "inside numbers".to_string()
+#[test]
+#[should_panic]
+fn pi_invalid_range() {
+    let x = 5;
+    let y = capital_pi(x, x);
+    assert_eq!(x ,y);
 }

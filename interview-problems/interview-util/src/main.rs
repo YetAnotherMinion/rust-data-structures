@@ -1,5 +1,5 @@
-extern crate interview_util;
+extern crate yam_interview_util;
 
 fn main() {
-    println!("Hello from numbers {}", interview_util::numbers::hello());
+    println!("Hello from numbers {}", 37);
 }

@@ -151,8 +151,7 @@ impl One<f64> for f64 {
     }
 }
 
+use core::ops::{Add, Sub, Mul, Div};
 
-
-
-
-//trait Field<T> : Zero<>+One+Add+Sub+Mul+Div {};
+trait Field<T> : Sized + Zero<T> + One<T> + Add + Sub + Mul + Div {}
+impl<T> Field<T> for T where T: Sized + Zero<T> + One<T> + Add + Sub + Mul + Div {}

@@ -2,14 +2,14 @@ extern crate core;
 
 pub mod numbers;
 
-use self::numbers::{binomial, hello};
+use self::numbers::{binomial};
 
 #[cfg(test)]
 mod test {
     #[test]
     fn it_works() {
         //let x = binomial(3, 4);
-        println!("hello from lib {}", super::numbers::hello());
+        println!("hello from lib {}", 37);
     }
 
     #[test]
