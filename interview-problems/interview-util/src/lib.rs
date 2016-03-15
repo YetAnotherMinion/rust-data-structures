@@ -1,6 +1,7 @@
 extern crate core;
 
 pub mod numbers;
+pub mod numeric;
 
 use self::numbers::{binomial};
 
