@@ -1,9 +1,8 @@
-use numeric::{Zero, One};
-use core::ops::{Add, Sub, Mul, Div};
-use core::fmt::Debug;
+use numeric::{One, Field};
+use core::ops::{Add, Mul};
 
 pub fn binomial<T>(n: T, k: T) -> T 
-    where T: Add<Output = T>+Sub<Output = T>+Mul<Output = T>+Div<Output = T>+Zero+One+PartialOrd+Copy+Eq + Debug
+    where T: Field + Copy
 {
     if k > n {
         panic!("k must be <= n");
@@ -32,7 +31,7 @@ pub fn binomial<T>(n: T, k: T) -> T
 // start must be less than end
 
 pub fn range_product<T>(start: T, end: T) -> T
-    where T: Add<Output = T> + Mul<Output = T> + One + PartialOrd + Copy + Eq + Debug
+    where T: Add<Output = T> + Mul<Output = T> + One + PartialOrd + Copy + Eq
 {
     if start == end {
         return start;
@@ -49,15 +48,18 @@ pub fn range_product<T>(start: T, end: T) -> T
     result
 }
 
-#[test]
-fn invalid_range() {
-    let x = 5;
-    let y = range_product(x, x);
-    assert_eq!(x ,y);
-}
+#[cfg(test)]
+mod test {
+    #[test]
+    fn invalid_range() {
+        let x = 5;
+        let y = super::range_product(x, x);
+        assert_eq!(x ,y);
+    }
 
-#[test]
-fn small_range() {
-    assert_eq!(360, range_product(3, 6));
+    #[test]
+    fn small_range() {
+        assert_eq!(360, super::range_product(3, 6));
+    }
 }
 
