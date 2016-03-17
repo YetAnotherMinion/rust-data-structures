@@ -33,7 +33,8 @@ mod tests {
 
     use test::{black_box, Bencher};
     #[bench]
-    fn bench_small(b: &mut Bencher) {
+    #[should_panic] // overflow
+    fn bench_small_catalan(b: &mut Bencher) {
     
         b.iter(|| {
             let n: u64 = black_box(30u64);
@@ -41,19 +42,27 @@ mod tests {
         });
     }
     #[bench]
-    fn bench_faster_small(b: &mut Bencher) {
-        b.iter(|| {
-            let n: u64 = black_box(30u64);
-            super::numbers::catalan(n)
-        });    
-    }
-
-    #[bench]
-    fn bench_large_catalan_number (b: &mut Bencher) {
+    #[should_panic] // overflow
+    fn bench_large_catalan(b: &mut Bencher) {
     
         b.iter(|| {
             let n: u64 = black_box(59u64);
             super::numbers::catalan(n)
+        });
+    }
+    #[bench]
+    fn bench_small_narayana(b: &mut Bencher) {
+        b.iter(|| {
+            let n: u64 = black_box(19u64);
+            let k: u64 = black_box(10u64);
+            super::numbers::narayana(n, k);
+        });
+    }
+    fn bench_small_faster_narayana(b: &mut Bencher) {
+        b.iter(|| {
+            let n: u64 = black_box(19u64);
+            let k: u64 = black_box(10u64);
+            super::numbers::faster_narayana(n, k);
         });
     }
 
