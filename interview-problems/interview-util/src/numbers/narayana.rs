@@ -36,18 +36,25 @@ pub fn narayana<T>(n: T, k: T) -> T
         return T::one();
     }
 
-    let r = if (k - T::one()) > (n - k + T::one()) {
+    let r = if k > n - k {
+        k
+    } else {
+        n - k
+    };
+    
+    let s = if k - T::one() > n - k + T::one() {
         k - T::one()
     } else {
         n - k + T::one()
     };
     
     let two = T::one() + T::one();
-    let first = range_product(r + two, n) / range_product(T::one(), n-r + T::one());
-    let second = range_product(r + T::one(), n) / range_product(T::one(), n-r);
+    let first = range_product(r + T::one(), n) / range_product(T::one(), n-r);
+    let second = range_product(s + T::one(), n) / range_product(T::one(), n-s);
     let result = first * second;
     result / n
-}
+
+    }
 
 #[cfg(test)]
 mod tests {

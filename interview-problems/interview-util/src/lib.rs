@@ -58,6 +58,7 @@ mod tests {
             super::numbers::narayana(n, k);
         });
     }
+    #[bench]
     fn bench_small_faster_narayana(b: &mut Bencher) {
         b.iter(|| {
             let n: u64 = black_box(19u64);
