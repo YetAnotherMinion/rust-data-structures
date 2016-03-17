@@ -1,12 +1,9 @@
 #![feature(test)]
-
 extern crate core;
 extern crate test;
 
 pub mod numbers;
 pub mod numeric;
-
-use self::numbers::{binomial};
 
 #[cfg(test)]
 mod tests {
@@ -58,13 +55,4 @@ mod tests {
             super::numbers::narayana(n, k);
         });
     }
-    #[bench]
-    fn bench_small_faster_narayana(b: &mut Bencher) {
-        b.iter(|| {
-            let n: u64 = black_box(19u64);
-            let k: u64 = black_box(10u64);
-            super::numbers::faster_narayana(n, k);
-        });
-    }
-
 }

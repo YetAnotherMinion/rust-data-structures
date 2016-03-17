@@ -1,25 +1,6 @@
 use numeric::{One, Field};
-use numbers::{binomial, range_product};
+use numbers::range_product;
 
-
-pub fn faster_narayana<T>(n: T, k: T) -> T
-    where T: Field + Copy + Clone + Eq
-{
-    if k > n {
-        panic!("k cannot be greater than n");
-    }
-    if n == T::one() {
-        return T::one();
-    }
-    if k == T::one() {
-        return T::one();
-    }
-    if k == n {
-        return T::one();
-    }
-    let result: T = (binomial(n, k) * binomial(n, k - T::one())) / n;
-    result
-}
 pub fn narayana<T>(n: T, k: T) -> T
     where T: Field + Copy + Clone + Eq
 {
@@ -47,13 +28,10 @@ pub fn narayana<T>(n: T, k: T) -> T
     } else {
         n - k + T::one()
     };
-    
-    let two = T::one() + T::one();
+
     let first = range_product(r + T::one(), n) / range_product(T::one(), n-r);
     let second = range_product(s + T::one(), n) / range_product(T::one(), n-s);
-    let result = first * second;
-    result / n
-
+    first * second / n
     }
 
 #[cfg(test)]
