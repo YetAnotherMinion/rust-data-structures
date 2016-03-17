@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
 
 [dependencies]
+yam-interview-util = { path = "../interview-util" }
