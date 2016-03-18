@@ -32,11 +32,10 @@ mod tests {
 
     use test::{black_box, Bencher};
     #[bench]
-    #[should_panic] // overflow
     fn bench_small_catalan(b: &mut Bencher) {
     
         b.iter(|| {
-            let n: u64 = black_box(30u64);
+            let n: u64 = black_box(20u64);
             super::numbers::catalan(n)
         });
     }
