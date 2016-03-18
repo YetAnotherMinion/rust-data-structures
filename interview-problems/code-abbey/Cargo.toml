@@ -1,0 +1,6 @@
+[package]
+name = "yam-code-abbey"
+version = "0.1.0"
+authors = ["YetAnotherMinion <yetanotherminion@gmail.com>"]
+
+[dependencies]

@@ -10,7 +10,9 @@ mod tests {
     #[test]
     #[should_panic]
     fn bad_binomial() {
-        let x = super::numbers::binomial(3, 4);
+        // the leading underscore on the variable surpresses
+        // the unused variable warning
+        let _x = super::numbers::binomial(3, 4);
     }
 
     #[test]
