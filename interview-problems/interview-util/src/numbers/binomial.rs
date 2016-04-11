@@ -49,8 +49,8 @@ pub fn range_product<T>(start: T, end: T) -> T
 }
 
 #[cfg(test)]
-mod test {
-    #[test]
+mod tests {
+   #[test]
     fn invalid_range() {
         let x = 5;
         let y = super::range_product(x, x);
